@@ -29,7 +29,7 @@ export const CardTemplate: React.FC<Props> = ({
 }) => {
   console.log(image);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card elevation={4} sx={{ maxWidth: 345 }}>
       <CardMedia component='img' height='140' image={image} alt={alt} />
       <CardContent style={cardHeight}>
         <Typography gutterBottom variant='h5' component='div'>

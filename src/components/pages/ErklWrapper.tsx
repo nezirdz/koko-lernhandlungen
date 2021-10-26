@@ -16,7 +16,13 @@ interface Props {
 
 export const ErkWrapper: React.FC<Props> = ({ children, reihe, answer }) => {
   return (
-    <Paper style={{ padding: "1rem", marginBottom: "2rem" }}>
+    <Paper
+      elevation={3}
+      style={{
+        padding: "1rem",
+        marginBottom: "2rem",
+        backgroundColor: "rgb(251 251 251)",
+      }}>
       <Box mb={3}>
         <Typography variant='h6'>Vervollständige die Reihe</Typography>
         <Typography variant='body1'>

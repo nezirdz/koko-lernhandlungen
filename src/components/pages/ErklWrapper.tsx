@@ -18,7 +18,7 @@ export const ErkWrapper: React.FC<Props> = ({ children, reihe, answer }) => {
   return (
     <Paper style={{ padding: "1rem", marginBottom: "2rem" }}>
       <Box mb={3}>
-        <Typography variant='h6'>Verfollständige die Reihe</Typography>
+        <Typography variant='h6'>Vervollständige die Reihe</Typography>
         <Typography variant='body1'>
           <strong>{reihe} *_*</strong>{" "}
         </Typography>

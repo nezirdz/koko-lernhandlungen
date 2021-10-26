@@ -4,7 +4,7 @@ import { CardTemplate } from "../../../utils/card";
 
 export const Verstehen: React.FC = () => {
   const text: string =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum unde temporibus autem! Magnam cum deserunt cumque nostrum cupiditate voluptas odit sint aliquam vitae adipisci at quasi deleniti, est illo.";
+    "Das Nachvollziehen eines Sachverhalts trägt dazu bei, sich mit der Materie vertieft auseinander zu setzen. ";
 
   const data: any = useStaticQuery(graphql`
     query {

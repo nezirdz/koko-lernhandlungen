@@ -16,7 +16,7 @@ interface Props {
 }
 
 const cardHeight = {
-  height: "20vh",
+  height: "15vh",
 };
 
 export const CardTemplate: React.FC<Props> = ({ image, alt, title, text }) => {

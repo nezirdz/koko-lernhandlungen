@@ -4,7 +4,7 @@ import { CardTemplate } from "../../../utils/card";
 
 export const Schreiben: React.FC = () => {
   const text: string =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum unde temporibus autem! Magnam cum deserunt cumque nostrum cupiditate voluptas odit sint aliquam vitae adipisci at quasi deleniti, est illo.";
+    "Hierbei ist es wichtig, nicht wortwörtliche Kopien zu erstellen, sondern sinngemäße Kopien zu erstellen – in eigenen Worten zusammengefasst.";
 
   const data: any = useStaticQuery(graphql`
     query {

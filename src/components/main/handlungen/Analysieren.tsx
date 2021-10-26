@@ -4,7 +4,7 @@ import { CardTemplate } from "../../../utils/card";
 
 export const Analysieren: React.FC = () => {
   const text: string =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum unde temporibus autem! Magnam cum deserunt cumque nostrum cupiditate voluptas odit sint aliquam vitae adipisci at quasi deleniti, est illo.";
+    "Situationen oder Komplexe Handlungen werden in einfache verständliche Komponenten zerlegt, und somit diese auf Ihren Ursprung zurückführen.";
 
   const data: any = useStaticQuery(graphql`
     query {

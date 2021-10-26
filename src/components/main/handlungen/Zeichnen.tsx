@@ -4,7 +4,7 @@ import { CardTemplate } from "../../../utils/card";
 
 export const Zeichnen: React.FC = () => {
   const text: string =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum unde temporibus autem! Magnam cum deserunt cumque nostrum cupiditate voluptas odit sint aliquam vitae adipisci at quasi deleniti, est illo.";
+    "Wenn Sachverhalte strukturiert oder systematisch sind, hilft es oft, diese visuell darzustellen, z.B. in Flowcharts, Venn Diagrammen, Prozessabläufen, etc.";
 
   const data: any = useStaticQuery(graphql`
     query {

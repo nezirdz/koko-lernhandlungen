@@ -4,7 +4,7 @@ import { CardTemplate } from "../../../utils/card";
 
 export const Sprechen: React.FC = () => {
   const text: string =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ipsum unde temporibus autem! Magnam cum deserunt cumque nostrum cupiditate voluptas odit sint aliquam vitae adipisci at quasi deleniti, est illo.";
+    "Das Sprechen behandelt mehrere Möglichkeiten, sich mit dem Inhalt auseinanderzusetzen.";
 
   const data: any = useStaticQuery(graphql`
     query {

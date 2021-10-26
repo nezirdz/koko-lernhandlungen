@@ -12,7 +12,7 @@ import { Box } from "@mui/system";
 
 export const Main: React.FC = () => {
   return (
-    <Box mt={3} mb={2}>
+    <Box mt={3} mb={10}>
       <Container>
         <Grid
           container

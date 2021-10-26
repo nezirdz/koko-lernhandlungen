@@ -13,13 +13,20 @@ interface Props {
   alt?: string;
   title: string;
   text?: string;
+  to?: string;
 }
 
 const cardHeight = {
   height: "15vh",
 };
 
-export const CardTemplate: React.FC<Props> = ({ image, alt, title, text }) => {
+export const CardTemplate: React.FC<Props> = ({
+  image,
+  alt,
+  title,
+  text,
+  to,
+}) => {
   console.log(image);
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -35,7 +42,9 @@ export const CardTemplate: React.FC<Props> = ({ image, alt, title, text }) => {
         )}
       </CardContent>
       <CardActions>
-        <Button size='small'>Mehr erfahren</Button>
+        <Button size='small' href={to}>
+          Mehr erfahren
+        </Button>
       </CardActions>
     </Card>
   );

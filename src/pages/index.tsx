@@ -1,14 +1,13 @@
 import * as React from "react";
-import { Header } from "../components/header";
+import { Layout } from "../components/Layout";
 import { Main } from "../components/main";
 
 // markup
 const IndexPage: React.FC = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <Main />
-    </>
+    </Layout>
   );
 };
 

@@ -18,15 +18,13 @@ export const Reduzieren: React.FC = () => {
       }
     }
   `);
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <CardTemplate
       title='Reduzieren'
       text={text}
       image={data.file.childImageSharp.fluid.src}
+      to='/Entwickeln'
       alt='reduzieren'
     />
   );

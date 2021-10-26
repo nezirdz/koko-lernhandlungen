@@ -18,15 +18,13 @@ export const Entwickeln: React.FC = () => {
       }
     }
   `);
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <CardTemplate
       title='Entwickeln'
       text={text}
       image={data.file.childImageSharp.fluid.src}
+      to='/Entwickeln'
       alt='entwickeln'
     />
   );

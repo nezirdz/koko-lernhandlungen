@@ -12,40 +12,36 @@ import { Box } from "@mui/system";
 
 export const Main: React.FC = () => {
   return (
-    <Box mt={3} mb={10}>
-      <Container>
-        <Grid
-          container
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
-          spacing={4}>
-          <Grid item>
-            <Verstehen />
-          </Grid>
-          <Grid item>
-            <Schreiben />
-          </Grid>
-          <Grid item>
-            <Sprechen />
-          </Grid>
-          <Grid item>
-            <Reduzieren />
-          </Grid>
-          <Grid item>
-            <Zeichnen />
-          </Grid>
-          <Grid item>
-            <Einschatzen />
-          </Grid>
-          <Grid item>
-            <Analysieren />
-          </Grid>
-          <Grid item>
-            <Entwickeln />
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+    <Grid
+      container
+      direction='row'
+      justifyContent='center'
+      alignItems='center'
+      spacing={4}>
+      <Grid item>
+        <Verstehen />
+      </Grid>
+      <Grid item>
+        <Schreiben />
+      </Grid>
+      <Grid item>
+        <Sprechen />
+      </Grid>
+      <Grid item>
+        <Reduzieren />
+      </Grid>
+      <Grid item>
+        <Zeichnen />
+      </Grid>
+      <Grid item>
+        <Einschatzen />
+      </Grid>
+      <Grid item>
+        <Analysieren />
+      </Grid>
+      <Grid item>
+        <Entwickeln />
+      </Grid>
+    </Grid>
   );
 };

@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useEffect } from "react";
+import React from "react";
 import { CardTemplate } from "../../../utils/card";
 
 export const Zeichnen: React.FC = () => {
@@ -18,15 +18,13 @@ export const Zeichnen: React.FC = () => {
       }
     }
   `);
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <CardTemplate
       title='Zeichnen'
       text={text}
       image={data.file.childImageSharp.fluid.src}
+      to='/Zeichnen'
       alt='zeichnen'
     />
   );

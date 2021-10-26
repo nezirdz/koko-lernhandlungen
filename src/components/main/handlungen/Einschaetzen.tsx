@@ -18,15 +18,13 @@ export const Einschatzen: React.FC = () => {
       }
     }
   `);
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   return (
     <CardTemplate
       title='Einschätzen'
       text={text}
       image={data.file.childImageSharp.fluid.src}
+      to='/Entwickeln'
       alt='einschätzen'
     />
   );

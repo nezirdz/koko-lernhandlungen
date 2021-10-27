@@ -6,7 +6,9 @@ export const Header: any = () => (
     <AppBar position='static'>
       <Toolbar>
         <Typography variant='h6' sx={{ flexGrow: 1 }}>
-          Lernhandlungen
+          <a href='/' style={{ textDecoration: "none", color: "white" }}>
+            Lernhandlungen
+          </a>
         </Typography>
       </Toolbar>
     </AppBar>

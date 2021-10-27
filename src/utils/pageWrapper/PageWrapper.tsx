@@ -25,7 +25,7 @@ export const PageWrapper: React.FC<Props> = ({
   return (
     <Layout>
       <Box mb={4}>
-        <Typography variant='h2' style={headerStyle}>
+        <Typography variant='h3' style={headerStyle}>
           {title}
         </Typography>
         <Typography variant='h5' style={headerStyle}>

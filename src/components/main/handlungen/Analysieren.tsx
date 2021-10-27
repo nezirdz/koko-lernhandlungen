@@ -24,7 +24,7 @@ export const Analysieren: React.FC = () => {
       title='Analysieren'
       text={text}
       image={data.file.childImageSharp.fluid.src}
-      to='/Entwickeln'
+      to='/Analysieren'
       alt='analysieren'
     />
   );

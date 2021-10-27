@@ -24,7 +24,7 @@ export const Schreiben: React.FC = () => {
       title='Schreiben'
       text={text}
       image={data.file.childImageSharp.fluid.src}
-      to='/Entwickeln'
+      to='/Schreiben'
       alt='schreiben'
     />
   );

@@ -24,7 +24,7 @@ export const Reduzieren: React.FC = () => {
       title='Reduzieren'
       text={text}
       image={data.file.childImageSharp.fluid.src}
-      to='/Entwickeln'
+      to='/Reduzieren'
       alt='reduzieren'
     />
   );

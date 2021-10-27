@@ -24,7 +24,7 @@ export const Einschatzen: React.FC = () => {
       title='Einschätzen'
       text={text}
       image={data.file.childImageSharp.fluid.src}
-      to='/Entwickeln'
+      to='/Einschaetzen'
       alt='einschätzen'
     />
   );

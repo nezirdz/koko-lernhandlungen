@@ -26,7 +26,7 @@ const style = {
   display: "flex",
 };
 
-export const ImageCard: React.FC<Props> = ({
+const ImageCard: React.FC<Props> = ({
   children,
   imageRight,
   image,
@@ -79,3 +79,5 @@ export const ImageCard: React.FC<Props> = ({
     </Card>
   );
 };
+
+export default ImageCard;

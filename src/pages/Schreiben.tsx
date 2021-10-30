@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { WrappingPaper } from "../components/pages/WrappingPaper";
 import { PageWrapper } from "../utils/pageWrapper/PageWrapper";
 import { ImageDataLike } from "gatsby-plugin-image";
-import { ImageCard } from "../components/images/imageCard";
 import { DefaultAccordion } from "../components/pages/DefaultAccordion";
+import ImageCard from "../components/images/ImageCard";
 const texts = require("../components/pages/description.json");
 
 interface Nodes {
@@ -60,7 +60,7 @@ export const Images: React.FC = () => {
   const elements = sortedImages.map((image, index) => {
     let right: boolean | undefined = index % 2 ? true : false;
     return (
-      <WrappingPaper key={image.node.name}>
+      <WrappingPaper key={image.node.name} dark>
         <ImageCard
           imageRight={right}
           image={image.node.childImageSharp.fixed.src}

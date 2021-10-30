@@ -56,12 +56,25 @@ export const ImageCard: React.FC<Props> = ({
               src={fluid}
               alt={alt}
               style={{ margin: "auto", maxWidth: "100%" }}
+              onClick={toggleOpen}
             />
           </Box>
         </Modal>
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>{children}</CardContent>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}>
+        <CardContent
+          sx={{
+            flex: "1 0 auto",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}>
+          {children}
+        </CardContent>
       </Box>
     </Card>
   );

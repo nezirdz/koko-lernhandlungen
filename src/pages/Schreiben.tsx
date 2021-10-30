@@ -1,11 +1,12 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
 import { WrappingPaper } from "../components/pages/WrappingPaper";
 import { PageWrapper } from "../utils/pageWrapper/PageWrapper";
-import { getImage, ImageDataLike, StaticImage } from "gatsby-plugin-image";
-import { ImageWrapper } from "../components/images/ImageWrapper";
+import { ImageDataLike } from "gatsby-plugin-image";
 import { ImageCard } from "../components/images/imageCard";
+import { DefaultAccordion } from "../components/pages/DefaultAccordion";
+const texts = require("../components/pages/description.json");
 
 interface Nodes {
   node:
@@ -74,7 +75,23 @@ export const Images: React.FC = () => {
             }}>
             {image.node.name}
           </Typography>
+          <Typography variant='body1'>
+            Beschreibe die Pose so, dass du anhand deines Textes die Pose
+            nachstellen kannst.
+            {/* <pre>{JSON.stringify(texts)}</pre> */}
+          </Typography>
+          <TextField
+            fullWidth
+            label='Beschreibung'
+            multiline
+            rows={10}
+            placeholder={texts.text[index]}
+          />
         </ImageCard>
+
+        <DefaultAccordion title='Beispiel'>
+          <Typography variant='body2'>{texts.text[index]}</Typography>
+        </DefaultAccordion>
       </WrappingPaper>
     );
   });

@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import React from "react";
 import { Sprechen } from "./handlungen/Sprechen";
 import { Verstehen } from "./handlungen/Verstehen";
@@ -8,7 +8,6 @@ import { Zeichnen } from "./handlungen/Zeichnen";
 import { Einschatzen } from "./handlungen/Einschaetzen";
 import { Analysieren } from "./handlungen/Analysieren";
 import { Entwickeln } from "./handlungen/Entwickeln";
-import { Box } from "@mui/system";
 
 export const Main: React.FC = () => {
   return (

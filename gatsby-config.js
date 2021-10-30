@@ -10,6 +10,7 @@ module.exports = {
         path: "./src/media",
       },
     },
+    "gatsby-plugin-image",
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
   ],

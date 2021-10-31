@@ -28,6 +28,7 @@ export const ListItems: React.FC<ListItems> = ({ mobile }) => {
   const [items, setItems] = useState<Items>([]);
   const [value, setValue] = useState("");
   const direction = mobile ? "column" : "column-reverse";
+  const mobilePadding = mobile ? "2rem" : "0";
 
   const handleClick = (value: string) => {
     if (value !== "") {
@@ -51,7 +52,7 @@ export const ListItems: React.FC<ListItems> = ({ mobile }) => {
     <Box
       sx={{
         width: "100%",
-        padding: "1rem",
+        padding: mobilePadding,
         maxWidth: "100%",
         display: "flex",
         flexDirection: direction,
@@ -66,19 +67,20 @@ export const ListItems: React.FC<ListItems> = ({ mobile }) => {
               style={{
                 display: "flex",
                 justifyContent: "end",
-                alignItems: "start",
+                alignItems: "center",
                 maxWidth: "100%",
               }}>
-              <Typography>{item}</Typography>
-              <Button onClick={() => removeItem(index)}>X</Button>
+              <Typography variant='body1'>{item}</Typography>
+              <Button onClick={() => removeItem(index)}>
+                <strong>X</strong>
+              </Button>
             </li>
           );
         })}
       </ul>
       <Box
         sx={{
-          width: "80%",
-          maxWidth: "90%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "end",

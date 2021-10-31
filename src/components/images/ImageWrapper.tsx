@@ -1,51 +1,47 @@
 import { Modal } from "@mui/material";
 import { Box } from "@mui/system";
-import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useState } from "react";
 
 interface Props {
+  children: JSX.Element | null | JSX.Element[];
+  opened: boolean;
+  key?: any;
   image: any;
   name: string;
 }
 
-// const boxStyle = {
-//   position: "absolute" as "absolute",
-//   top: "35%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   width: "40vw",
-//   height: "60vh",
-//   bgcolor: "background.paper",
-//   boxShadow: 24,
-//   p: 4,
-// };
-
 const style = {
-  maxWidth: "60vw",
-  // maxHeight: "70vh",
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "100%",
+  bgcolor: "background.paper",
+  display: "flex",
 };
 
-export const ImageWrapper: React.FC<Props> = ({ name, image }) => {
-  const [open, setOpen] = useState(false);
+export const ImageWrapper: React.FC<Props> = ({
+  children,
+  opened,
+  image,
+  name,
+}) => {
+  const [open, setOpen] = useState(opened);
   const toggleOpen = () => setOpen(!open);
 
   return (
     <>
-      <GatsbyImage
-        imgStyle={{ width: "100%" }}
-        image={image}
-        alt={name}
-        onClick={() => toggleOpen()}
-      />
-      <Modal
-        open={open}
-        onClose={toggleOpen}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'>
-        <Box style={style}>
-          <GatsbyImage image={image} alt={name} imgStyle={{ width: "100%" }} />
+      <Modal open={open} onClose={toggleOpen}>
+        <Box sx={style}>
+          <img
+            src={image}
+            alt={name}
+            style={{ margin: "auto", maxWidth: "100%" }}
+            onClick={toggleOpen}
+          />
         </Box>
       </Modal>
+      {children}
     </>
   );
 };

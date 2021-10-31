@@ -1,60 +1,116 @@
-import React from "react";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
-import { PageWrapper } from "../utils/pageWrapper/PageWrapper";
-import { Box } from "@mui/system";
+import { Textsms } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 import { graphql, useStaticQuery } from "gatsby";
+import { ImageDataLike } from "gatsby-plugin-image";
+import React from "react";
+import ImageCard from "../components/images/ImageCard";
+import { WrappingPaper } from "../components/pages/WrappingPaper";
+import { PageWrapper } from "../utils/pageWrapper/PageWrapper";
+const texts = require("../components/pages/description.json");
 
-const Zeichnen: React.FC = () => {
+interface Nodes {
+  node:
+    | ImageDataLike & {
+        id: string;
+        name: string;
+        childImageSharp: {
+          fluid: {
+            src: string;
+          };
+          fixed: {
+            src: string;
+          };
+        };
+      };
+}
+
+interface Props {
+  children: JSX.Element | null | JSX.Element[];
+}
+
+export const Images: React.FC = () => {
   const data: any = useStaticQuery(graphql`
     query {
-      file(name: { eq: "zeichnen" }) {
-        name
-        childImageSharp {
-          fluid {
-            src
+      images: allFile(filter: { name: { regex: "/Pose/" } }) {
+        edges {
+          node {
+            id
+            name
+            childImageSharp {
+              fixed(toFormat: WEBP, width: 500, height: 500) {
+                src
+              }
+              fluid {
+                src
+              }
+            }
           }
         }
       }
     }
   `);
 
+  const [...images]: Nodes[] = data.images.edges;
+  // const image = getImage();
+
+  const sortedImages = images.sort((a, b) =>
+    a.node.name.localeCompare(b.node.name)
+  );
+
+  const elements = sortedImages.map((image, index) => {
+    let right: boolean | undefined = index % 2 ? true : false;
+    return (
+      <WrappingPaper key={image.node.name} dark>
+        <ImageCard
+          imageRight={right}
+          image={image.node.childImageSharp.fixed.src}
+          fluid={image.node.childImageSharp.fluid.src}
+          alt={image.node.name}>
+          <Typography
+            variant='h4'
+            style={{
+              textAlign: "center",
+              textDecoration: "underline",
+              marginBottom: "1rem",
+            }}>
+            {image.node.name}
+          </Typography>
+          <Typography
+            sx={{
+              flex: "1 0 auto",
+            }}
+            variant='h6'>
+            Beschreibe die Pose so, dass du anhand deines Textes die Pose
+            nachstellen kannst.
+            <br />
+            <br />
+            <Typography variant='body1'>{texts.text[index]}</Typography>
+          </Typography>
+        </ImageCard>
+
+        {/* <DefaultAccordion title='Beispiel'>
+          <Typography variant='body2'>{texts.text[index]}</Typography>
+        </DefaultAccordion> */}
+      </WrappingPaper>
+    );
+  });
+
+  return <>{elements}</>;
+};
+
+const Zeichnen: React.FC<Props> = () => {
   const description: string =
     "Wenn Sachverhalte strukturiert oder systematisch sind, hilft es oft, diese visuell darzustellen, z.B. in Flowcharts, Venn Diagrammen, Prozessabläufen, etc.";
 
   return (
-    <PageWrapper
-      title='Zeichnen'
-      shortDescription={description}
-      image={data.file.childImageSharp.fluid.src}>
-      <Box mb={3}>
-        <Typography variant='body1'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          tempora, omnis odit, amet ad ullam deleniti totam non temporibus porro
-          eligendi alias quidem? Esse ipsum perspiciatis veniam commodi
-          voluptates ipsa assumenda laboriosam, doloremque, amet sequi sapiente
-          praesentium odit, mollitia ad!
-        </Typography>
-      </Box>
-      <Accordion id='panel1a-header'>
-        <AccordionSummary>Aufgabe 1</AccordionSummary>
-        <AccordionDetails>
-          <Typography variant='body1'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
-            dolor quos magnam omnis nihil in inventore laborum quisquam tenetur
-            consequatur debitis vitae voluptates ab fugiat, nobis ea eveniet,
-            laudantium, quam placeat suscipit dignissimos. Earum tenetur
-            reiciendis incidunt, exercitationem, voluptatem aperiam ad
-            blanditiis praesentium sed obcaecati autem iste eaque facere ipsam
-            nesciunt aut, maxime perspiciatis minus in! Quaerat nihil culpa
-            veritatis.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+    <PageWrapper title='Zeichnen' shortDescription={description}>
+      <Typography>
+        Verwende die zur Verfügung gestellte Beschreibung, um ein Flow-Chart
+        (Pfeil-Diagramm) mit den Schritten in richtiger Reihenfolge zu
+        erstellen, welche notwendig sind, um von einer kerzengeraden Pose in die
+        beschriebene Pose zu kommen.
+      </Typography>
+      <Images />
     </PageWrapper>
   );
 };

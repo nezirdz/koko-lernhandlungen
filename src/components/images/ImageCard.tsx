@@ -39,12 +39,25 @@ const ImageCard: React.FC<Props> = ({
   const small: boolean = useMediaQuery("(min-width:600px)");
   const direction = imageRight ? "row" : "row-reverse";
   const mobile = small ? direction : "column";
+  const textWidth = small ? "53%" : "100%";
 
   return (
-    <Card sx={{ display: "flex", flexDirection: mobile }}>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: mobile,
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifySelf: "center",
+        }}>
         <CardMedia
-          height={small ? "500" : "170"}
+          width={small ? "500" : "100%"}
+          // height={small ? "500" : "170"}
           component={"img"}
           image={image}
           alt={alt}
@@ -63,18 +76,11 @@ const ImageCard: React.FC<Props> = ({
       </Box>
       <Box
         sx={{
+          maxWidth: textWidth,
           display: "flex",
           flexDirection: "column",
         }}>
-        <CardContent
-          sx={{
-            flex: "1 0 auto",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}>
-          {children}
-        </CardContent>
+        <CardContent>{children}</CardContent>
       </Box>
     </Card>
   );

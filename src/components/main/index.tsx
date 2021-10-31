@@ -17,9 +17,9 @@ export const Main: React.FC = () => {
       justifyContent='center'
       alignItems='center'
       spacing={4}>
-      <Grid item>
+      {/* <Grid item>
         <Verstehen />
-      </Grid>
+      </Grid> */}
       <Grid item>
         <Schreiben />
       </Grid>
